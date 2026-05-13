@@ -1,0 +1,14 @@
+#Compiled binaries
+*.o
+.a
+.so
+.out
+.exe
+#build directories
+build/
+cmake-build-*/
+#IDE
+.vscode/
+.idea/
+#编译后的可执行文件（无扩展命）
+week01/hello
