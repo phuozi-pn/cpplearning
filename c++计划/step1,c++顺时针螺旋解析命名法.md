@@ -41,6 +41,7 @@ const int * p     // const 左边没东西，看右边 int → 修饰 "int 值" 
 引用是变量的另一个名字，**底层可能用指针实现**（编译器决定），但语义上和指针不同：
 
 | 引用 | 指针 |
+|---|---|
 | 必须初始化 | 可以延迟初始化 |
 | 不能重新绑定 | 可以重新指向 |
 | 不能为空 | 可以为 nullptr |
@@ -170,7 +171,7 @@ struct Node {
 
 | 问题 | 简要答案 |
 |---|---|
-| unique_ptr 为啥禁拷贝？ | 防 double-free |// p2 析构 → delete 那个 int 一次  ✅ p1 析构 → delete 同一个 int 第二次 → 💥 程序崩溃（double-free / undefined behavior）
+| unique_ptr 为啥禁拷贝？ | 防 double-free |
 | shared_ptr 内部布局？ | 两个指针 + 堆上控制块 |
 | shared_ptr 线程安全？ | 计数原子安全，对象本身和变量修改不安全 |
 | 循环引用怎么解？ | 一边改成 weak_ptr |
